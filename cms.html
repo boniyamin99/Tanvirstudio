@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Management - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./cms.html" class="active"><i class="fas fa-edit"></i> Content Mgt.</a></li>
+                    <li><a href="./logs.html"><i class="fas fa-clipboard-list"></i> Activity Logs</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>Website Content Management</h2>
+                <button id="save-all-cms-changes" class="btn"><i class="fas fa-save"></i> Save All Changes</button>
+            </div>
+
+            <form id="cms-form">
+                <div class="widget-card">
+                    <h3>Hero Section</h3>
+                    <div class="form-group">
+                        <label for="hero-title">Main Headline</label>
+                        <input type="text" id="hero-title" name="hero_title" class="form-control" value="Create Your Sound">
+                    </div>
+                    <div class="form-group">
+                        <label for="hero-subtitle">Sub-headline</label>
+                        <input type="text" id="hero-subtitle" name="hero_subtitle" class="form-control" value="Unleash your creativity with our state-of-the-art recording studio!">
+                    </div>
+                </div>
+
+                <div class="widget-card">
+                    <h3>About Us Section</h3>
+                    <div class="form-group">
+                        <label for="about-us-text">Main Content</label>
+                        <textarea id="about-us-text" name="about_us_text" class="form-control" rows="6">Established in 20XX, our professional music studio is dedicated to providing artists with a creative and inspiring environment. We combine cutting-edge technology with experienced engineers and producers to deliver exceptional audio quality for every project. From emerging talents to established artists, we are committed to helping you achieve your musical aspirations. Our team believes in collaboration, precision, and passion in every note. We offer a comfortable and acoustically treated space designed for optimal recording, mixing, and mastering. Come and experience the difference.</textarea>
+                    </div>
+                </div>
+
+                <div class="widget-card">
+                    <h3>Services Section</h3>
+                    <div class="form-grid">
+                         <div class="form-group">
+                            <label for="service-recording">Recording Description</label>
+                            <input type="text" id="service-recording" name="service_recording" class="form-control" value="High-fidelity audio recording with state-of-the-art equipment.">
+                        </div>
+                        <div class="form-group">
+                            <label for="service-mixing">Mixing Description</label>
+                            <input type="text" id="service-mixing" name="service_mixing" class="form-control" value="Perfect your tracks with professional mixing.">
+                        </div>
+                         <div class="form-group">
+                            <label for="service-mastering">Mastering Description</label>
+                            <input type="text" id="service-mastering" name="service_mastering" class="form-control" value="Polish your music for release-ready sound.">
+                        </div>
+                        </div>
+                </div>
+                 <div class="widget-card">
+                    <h3>Contact Information</h3>
+                    <div class="form-group">
+                        <label for="contact-location">Location</label>
+                        <input type="text" id="contact-location" name="contact_location" class="form-control" value="123 Music Lane, Studio City, Melodyville, 45678">
+                    </div>
+                     <div class="form-group">
+                        <label for="contact-phone">Phone Number</label>
+                        <input type="text" id="contact-phone" name="contact_phone" class="form-control" value="+1 (234) 567-890">
+                    </div>
+                     <div class="form-group">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" name="contact_email" class="form-control" value="info@musicstudio.com">
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="./js/cms.js"></script>
+</body>
+</html>

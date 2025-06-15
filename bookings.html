@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Bookings - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css"> </head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="./bookings.html" class="active"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>Manage Bookings</h2>
+                <button id="add-new-booking-btn" class="btn"><i class="fas fa-plus"></i> Add New Booking</button>
+            </div>
+
+            <div class="table-controls">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search by name, email, or ID...">
+                </div>
+                <div class="filter-container">
+                    <select id="status-filter">
+                        <option value="">All Statuses</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="in_progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <input type="date" id="date-start-filter">
+                    <input type="date" id="date-end-filter">
+                    <button id="apply-filters-btn" class="btn-secondary">Apply</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Client Name</th>
+                            <th>Service</th>
+                            <th>Booking Date</th>
+                            <th>Total (৳)</th>
+                            <th>Paid (৳)</th>
+                            <th>Due (৳)</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-table-body">
+                        <tr>
+                            <td>101</td>
+                            <td>Client A</td>
+                            <td>Mixing</td>
+                            <td>2025-06-10</td>
+                            <td>5,000</td>
+                            <td>5,000</td>
+                            <td>0</td>
+                            <td><span class="status-badge status-paid">Paid</span></td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                            <td class="action-buttons">
+                                <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon btn-danger" title="Delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination-controls">
+                <button id="prev-page-btn" disabled>Previous</button>
+                <span id="page-info">Page 1 of 10</span>
+                <button id="next-page-btn">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="booking-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3 id="modal-title">Add New Booking</h3>
+            <form id="modal-booking-form">
+                <p>Booking form fields will go here...</p>
+                <button type="submit" class="btn">Save Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/bookings.js"></script>
+</body>
+</html>

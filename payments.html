@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Payments - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="./bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                    <li><a href="./payments.html" class="active"><i class="fas fa-money-bill-wave"></i> Payments</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>Manage Payments</h2>
+                <button id="add-manual-payment-btn" class="btn"><i class="fas fa-plus"></i> Log Manual Payment</button>
+            </div>
+
+            <div class="table-controls">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search by Booking ID or Txn ID...">
+                </div>
+                <div class="filter-container">
+                    <select id="status-filter">
+                        <option value="">All Statuses</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                        <option value="failed">Failed</option>
+                    </select>
+                    <button id="apply-filters-btn" class="btn-secondary">Apply</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Payment ID</th>
+                            <th>Booking ID</th>
+                            <th>Amount (৳)</th>
+                            <th>Method</th>
+                            <th>Transaction ID</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="payments-table-body">
+                        <tr>
+                            <td>PAY-001</td>
+                            <td>101</td>
+                            <td>5,000</td>
+                            <td>bKash</td>
+                            <td>TRX12345ABC</td>
+                            <td>2025-06-10</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                            <td class="action-buttons">
+                                <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>PAY-002</td>
+                            <td>102</td>
+                            <td>4,000</td>
+                            <td>Cash</td>
+                            <td>N/A</td>
+                            <td>2025-06-12</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td class="action-buttons">
+                                <button class="btn-secondary btn-sm">Confirm</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination-controls">
+                </div>
+        </main>
+    </div>
+
+    <div id="payment-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3>Log a Manual Payment</h3>
+            <form id="modal-payment-form">
+                <div class="form-group">
+                    <label for="bookingId">Booking ID</label>
+                    <input type="number" id="bookingId" name="bookingId" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount (৳)</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" name="paymentMethod" required>
+                        <option value="cash">Cash</option>
+                        <option value="bank_transfer">Bank Transfer</option>
+                        <option value="bKash">bKash</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Save Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/payments.js"></script>
+</body>
+</html>

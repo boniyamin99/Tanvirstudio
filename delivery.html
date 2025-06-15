@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Deliveries - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="./bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                    <li><a href="./delivery.html" class="active"><i class="fas fa-truck"></i> Delivery</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>Manage Project Deliveries</h2>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Client Name</th>
+                            <th>Service</th>
+                            <th>Project Status</th>
+                            <th>Delivery Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="delivery-table-body">
+                        <tr>
+                            <td>101</td>
+                            <td>Client A</td>
+                            <td>Mixing</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                            <td><span class="status-badge status-pending">Pending Upload</span></td>
+                            <td class="action-buttons">
+                                <button class="btn-secondary btn-sm upload-btn" data-booking-id="101">
+                                    <i class="fas fa-upload"></i> Upload Final File
+                                </button>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>102</td>
+                            <td>Client B</td>
+                            <td>Recording</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                            <td><span class="status-badge status-confirmed">Delivered</span></td>
+                            <td class="action-buttons">
+                                <button class="btn-secondary btn-sm" disabled>
+                                    <i class="fas fa-check-circle"></i> Uploaded
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination-controls">
+                <button id="prev-page-btn" disabled>Previous</button>
+                <span id="page-info">Page 1 of 1</span>
+                <button id="next-page-btn">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="upload-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3 id="modal-title">Upload Final File for Booking #<span id="upload-booking-id"></span></h3>
+            <form id="modal-upload-form" enctype="multipart/form-data">
+                <input type="hidden" id="bookingId" name="bookingId">
+                <div class="form-group">
+                    <label for="finalFile">Select Audio File (mp3, wav)</label>
+                    <input type="file" id="finalFile" name="finalFile" required>
+                </div>
+                 <div class="form-group">
+                    <label for="delivery-notes">Notes for Client (Optional)</label>
+                    <textarea id="delivery-notes" name="notes" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn">Upload and Deliver</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/delivery.js"></script>
+</body>
+</html>

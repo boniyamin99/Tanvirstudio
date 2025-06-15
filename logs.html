@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Logs - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./logs.html" class="active"><i class="fas fa-clipboard-list"></i> Activity Logs</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>System Activity Logs</h2>
+            </div>
+
+            <div class="table-controls">
+                <div class="filter-container">
+                    <select id="user-filter">
+                        <option value="">All Users</option>
+                        </select>
+                    <select id="action-type-filter">
+                        <option value="">All Action Types</option>
+                        <option value="USER_LOGIN">User Login</option>
+                        <option value="USER_REGISTERED">User Registered</option>
+                        <option value="BOOKING_CREATED">Booking Created</option>
+                        <option value="STATUS_UPDATED">Status Updated</option>
+                        <option value="EMPLOYEE_CREATED">Employee Created</option>
+                        <option value="EMPLOYEE_DELETED">Employee Deleted</option>
+                        <option value="EXPENSE_CREATED">Expense Created</option>
+                    </select>
+                    <input type="date" id="date-start-filter">
+                    <input type="date" id="date-end-filter">
+                    <button id="apply-filters-btn" class="btn-secondary">Apply Filters</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Action</th>
+                            <th>Details</th>
+                            <th>IP Address</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logs-table-body">
+                        <tr>
+                            <td>admin (Admin)</td>
+                            <td><span class="status-badge status-info">EMPLOYEE_CREATED</span></td>
+                            <td>Created new employee 'John Doe' (ID: 1)</td>
+                            <td>127.0.0.1</td>
+                            <td>2025-06-09 10:30 AM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination-controls">
+                <button id="prev-page-btn" disabled>Previous</button>
+                <span id="page-info">Page 1 of 1</span>
+                <button id="next-page-btn">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="./js/logs.js"></script>
+</body>
+</html>

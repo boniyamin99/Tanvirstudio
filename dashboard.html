@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Music Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="./bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                    <li><a href="./payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a></li>
+                    <li><a href="./delivery.html"><i class="fas fa-truck"></i> Delivery</a></li>
+                    <li><a href="./employees.html"><i class="fas fa-users"></i> Employees</a></li>
+                    <li><a href="./expenses.html"><i class="fas fa-chart-line"></i> Expenses</a></li>
+                    <li><a href="./reports.html"><i class="fas fa-file-alt"></i> Reports</a></li>
+                    <li><a href="./chat.html"><i class="fas fa-comments"></i> Live Chat</a></li>
+                    <li><a href="./cms.html"><i class="fas fa-edit"></i> Content Mgt.</a></li>
+                    <li><a href="./surveys.html"><i class="fas fa-poll"></i> Surveys</a></li>
+                    <li><a href="./logs.html"><i class="fas fa-clipboard-list"></i> Activity Logs</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>Dashboard Overview</h2>
+                <div class="user-info">
+                    <span>Hello, Admin</span>
+                </div>
+            </div>
+
+            <div class="dashboard-cards-grid">
+                <div class="dashboard-card">
+                    <i class="fas fa-calendar-check card-icon"></i>
+                    <h3>Total Bookings</h3>
+                    <p class="card-value" id="total-bookings">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <i class="fas fa-dollar-sign card-icon"></i>
+                    <h3>Total Revenue</h3>
+                    <p class="card-value" id="total-revenue">৳0</p>
+                </div>
+                <div class="dashboard-card">
+                    <i class="fas fa-chart-line card-icon"></i>
+                    <h3>Total Expenses</h3>
+                    <p class="card-value" id="total-expenses">৳0</p>
+                </div>
+                <div class="dashboard-card">
+                    <i class="fas fa-wallet card-icon"></i>
+                    <h3>Net Profit</h3>
+                    <p class="card-value" id="net-profit">৳0</p>
+                </div>
+            </div>
+
+            <div class="kanban-board-card">
+                <h3>Project Workflow</h3>
+                <div class="kanban-board">
+                    <div class="kanban-column" id="col-confirmed">
+                        <h4>Confirmed</h4>
+                        <div class="kanban-card" draggable="true">Client A - Mixing</div>
+                    </div>
+                    <div class="kanban-column" id="col-in-progress">
+                        <h4>In Progress</h4>
+                        <div class="kanban-card" draggable="true">Client B - Recording</div>
+                    </div>
+                    <div class="kanban-column" id="col-ready-for-review">
+                        <h4>Ready for Review</h4>
+                        <div class="kanban-card" draggable="true">Client C - Production</div>
+                    </div>
+                    <div class="kanban-column" id="col-completed">
+                        <h4>Completed</h4>
+                        </div>
+                </div>
+            </div>
+
+            <div class="dashboard-widgets-grid">
+                <div class="widget-card">
+                    <h3>Recent System Activity</h3>
+                    <ul id="activity-log-list">
+                        <li>Admin updated booking #101</li>
+                        <li>New expense of ৳500 recorded</li>
+                    </ul>
+                </div>
+                <div class="widget-card">
+                    <h3>Who's On Shift Today</h3>
+                    <ul id="on-shift-list">
+                        <li>John Doe (Morning)</li>
+                        <li>Jane Smith (Evening)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/admin-dashboard.js"></script>
+</body>
+</html>

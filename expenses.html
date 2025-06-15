@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Expenses - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="./bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                    <li><a href="./employees.html"><i class="fas fa-users"></i> Employees</a></li>
+                    <li><a href="./expenses.html" class="active"><i class="fas fa-chart-line"></i> Expenses</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>Manage Expenses</h2>
+                <button id="add-new-expense-btn" class="btn"><i class="fas fa-plus"></i> Add New Expense</button>
+            </div>
+
+            <div class="table-controls">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search by description...">
+                </div>
+                <div class="filter-container">
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="studio_rent">Studio Rent</option>
+                        <option value="equipment">Equipment</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="salaries">Salaries</option>
+                    </select>
+                    <input type="date" id="date-start-filter">
+                    <input type="date" id="date-end-filter">
+                    <button id="apply-filters-btn" class="btn-secondary">Apply</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount (৳)</th>
+                            <th>Expense Date</th>
+                            <th>Receipt</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenses-table-body">
+                        <tr>
+                            <td>EXP-01</td>
+                            <td>New Condenser Microphone</td>
+                            <td>Equipment</td>
+                            <td>25,000</td>
+                            <td>2025-05-20</td>
+                            <td><a href="#" class="btn-link">View</a></td>
+                            <td class="action-buttons">
+                                <button class="btn-icon btn-danger" title="Delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination-controls">
+                <button id="prev-page-btn" disabled>Previous</button>
+                <span id="page-info">Page 1 of 2</span>
+                <button id="next-page-btn">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="expense-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3 id="modal-title">Add New Expense</h3>
+            <form id="modal-expense-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description" required>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="amount">Amount (৳)</label>
+                        <input type="number" id="amount" name="amount" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="expenseDate">Expense Date</label>
+                        <input type="date" id="expenseDate" name="expenseDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">-- Select a Category --</option>
+                        <option value="studio_rent">Studio Rent</option>
+                        <option value="equipment">Equipment</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="salaries">Salaries</option>
+                        <option value="travel">Travel</option>
+                        <option value="miscellaneous">Miscellaneous</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="receipt">Upload Receipt (Optional)</label>
+                    <input type="file" id="receipt" name="receipt">
+                </div>
+                <button type="submit" class="btn">Save Expense</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/expenses.js"></script>
+</body>
+</html>

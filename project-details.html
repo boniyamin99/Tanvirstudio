@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2 id="project-title">Project Details: Mixing for 'New Song'</h2>
+            </div>
+
+            <div class="project-details-grid">
+                
+                <div class="project-main-column">
+                    <div class="widget-card">
+                        <h3>Project Communication</h3>
+                        <div class="project-chat-messages" id="project-chat-messages">
+                            <div class="message received">
+                                <strong>Client A:</strong> Here is the reference track I mentioned. Please check.
+                                <span class="timestamp">June 9, 2025, 10:05 AM</span>
+                            </div>
+                            <div class="message sent">
+                                <strong>John Doe (Engineer):</strong> Got it! Thanks. I will start working on the mix this afternoon.
+                                <span class="timestamp">June 9, 2025, 10:15 AM</span>
+                            </div>
+                        </div>
+                        <div class="chat-input-area project-chat-input">
+                            <textarea id="project-message-input" placeholder="Write a comment or update..."></textarea>
+                            <button id="send-project-message" class="btn-secondary">Send</button>
+                        </div>
+                    </div>
+
+                    <div class="widget-card">
+                        <h3>Project Files</h3>
+                        <div class="file-management-area">
+                            <div class="file-list-section">
+                                <h4>Files from Studio</h4>
+                                <ul id="studio-files-list">
+                                    <li><a href="#"><i class="fas fa-file-audio"></i> Mix_Draft_v1.wav</a> <span>(June 9, 2025)</span></li>
+                                </ul>
+                                <button class="btn-sm"><i class="fas fa-upload"></i> Upload Studio File</button>
+                            </div>
+                            <div class="file-list-section">
+                                <h4>Files from Client</h4>
+                                <ul id="client-files-list">
+                                    <li><a href="#"><i class="fas fa-file-audio"></i> reference_track.mp3</a> <span>(June 9, 2025)</span></li>
+                                </ul>
+                                <button class="btn-sm"><i class="fas fa-upload"></i> Upload Your File</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-sidebar-column">
+                    <div class="widget-card">
+                        <h3>Details</h3>
+                        <ul class="project-info-list">
+                            <li><strong>Booking ID:</strong> <span id="detail-booking-id">#102</span></li>
+                            <li><strong>Client:</strong> <span id="detail-client-name">Client A</span></li>
+                            <li><strong>Assigned To:</strong> <span id="detail-employee-name">John Doe</span></li>
+                            <li><strong>Service:</strong> <span id="detail-service">Mixing</span></li>
+                            <li><strong>Status:</strong> <span id="detail-status" class="status-badge status-in-progress">In Progress</span></li>
+                            <li><strong>Due Date:</strong> <span id="detail-due-date">June 15, 2025</span></li>
+                        </ul>
+                    </div>
+                    <div class="widget-card">
+                         <h3>History</h3>
+                         <ul class="project-history-list" id="project-history-list">
+                             <li>Status changed to 'In Progress' by John Doe.</li>
+                             <li>Client A uploaded a new file.</li>
+                         </ul>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="./js/project-details.js"></script>
+</body>
+</html>

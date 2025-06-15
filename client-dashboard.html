@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Tanvir Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css"> </head>
+<body>
+
+    <header id="main-header">
+        <div class="container">
+            <a href="./index.html#home" class="logo">Tanvir <span>Studio</span></a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="./index.html#home">Home</a></li>
+                    <li><a href="./client-dashboard.html" class="active-link">My Dashboard</a></li>
+                    <li><a href="./index.html#booking">New Booking</a></li>
+                    <li><a href="#" id="client-logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" style="padding-top: 50px;">
+        <div class="topbar">
+            <h2 id="welcome-message">Welcome, [Client Name]!</h2>
+        </div>
+
+        <div class="dashboard-cards-grid">
+            <div class="dashboard-card">
+                <i class="fas fa-tasks card-icon"></i>
+                <h3>Active Projects</h3>
+                <p class="card-value" id="active-projects-count">0</p>
+            </div>
+            <div class="dashboard-card">
+                <i class="fas fa-check-circle card-icon"></i>
+                <h3>Completed Projects</h3>
+                <p class="card-value" id="completed-projects-count">0</p>
+            </div>
+            <div class="dashboard-card">
+                <i class="fas fa-file-invoice-dollar card-icon"></i>
+                <h3>Total Spent</h3>
+                <p class="card-value" id="total-spent">৳0</p>
+            </div>
+            <div class="dashboard-card">
+                <i class="fas fa-hourglass-half card-icon"></i>
+                <h3>Amount Due</h3>
+                <p class="card-value" id="amount-due">৳0</p>
+            </div>
+        </div>
+
+        <div class="widget-card">
+            <h3>My Bookings</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Total Amount</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="client-bookings-table">
+                        <tr>
+                            <td>#102</td>
+                            <td>Recording</td>
+                            <td>2025-06-12</td>
+                            <td>৳8,000</td>
+                            <td><span class="status-badge status-in-progress">In Progress</span></td>
+                            <td class="action-buttons">
+                                <button class="btn-secondary btn-sm">Make Payment</button>
+                                <button class="btn-secondary btn-sm"><i class="fas fa-comments"></i> Chat</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#101</td>
+                            <td>Mixing</td>
+                            <td>2025-06-10</td>
+                            <td>৳5,000</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                            <td class="action-buttons">
+                                <button class="btn-secondary btn-sm"><i class="fas fa-download"></i> Download Files</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 100px;">
+        </footer>
+
+    <script src="./js/client-dashboard.js"></script>
+</body>
+</html>

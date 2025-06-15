@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="./bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                    <li><a href="./chat.html" class="active"><i class="fas fa-comments"></i> Live Chat</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>Live Chat</h2>
+            </div>
+
+            <div class="chat-app-container">
+                <div class="conversations-panel">
+                    <div class="panel-header">
+                        <h3>Conversations</h3>
+                    </div>
+                    <ul id="conversation-list">
+                        <li class="conversation-item active" data-user-id="user123">
+                            <div class="convo-details">
+                                <span class="convo-username">Visitor 123</span>
+                                <span class="convo-preview">Okay, thank you for the info!</span>
+                            </div>
+                        </li>
+                        <li class="conversation-item" data-user-id="user456">
+                            <div class="convo-details">
+                                <span class="convo-username">Visitor 456</span>
+                                <span class="convo-preview">I have a question about the...</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="chat-panel">
+                    <div id="chat-panel-placeholder">
+                        <i class="fas fa-comments"></i>
+                        <p>Select a conversation to start chatting.</p>
+                    </div>
+                    <div id="chat-panel-active" class="hidden">
+                        <div class="panel-header" id="chat-window-header">
+                            <h3 id="chatting-with-username">Visitor 123</h3>
+                        </div>
+                        <div class="chat-messages" id="admin-chat-messages">
+                            <div class="message received">Hello, I have a question about your premium package.</div>
+                            <div class="message sent">Hello! Of course, I'd be happy to help. What would you like to know?</div>
+                             <div class="message received">Okay, thank you for the info!</div>
+                        </div>
+                        <div class="chat-input-area">
+                            <textarea id="admin-chat-input" placeholder="Type your reply..."></textarea>
+                            <button id="admin-send-btn" class="btn-icon"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="./js/admin-chat.js"></script>
+</body>
+</html>

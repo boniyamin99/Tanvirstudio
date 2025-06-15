@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Builder - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./forms.html" class="active"><i class="fas fa-wpforms"></i> Form Builder</a></li>
+                    <li><a href="./cms.html"><i class="fas fa-edit"></i> Content Mgt.</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>Booking Form Builder</h2>
+                <button id="add-new-field-btn" class="btn"><i class="fas fa-plus"></i> Add New Field</button>
+            </div>
+
+            <div class="widget-card">
+                <h3>Current Form Fields</h3>
+                <p class="section-description">Drag and drop to reorder the fields.</p>
+                <ul id="form-fields-list" class="sortable-list">
+                    <li class="form-field-item" data-field-id="1">
+                        <i class="fas fa-grip-vertical handle"></i>
+                        <span class="field-label">Your Name</span>
+                        <span class="field-type-badge">Text</span>
+                        <div class="action-buttons">
+                            <button class="btn-icon edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon btn-danger delete-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </li>
+                    <li class="form-field-item" data-field-id="2">
+                        <i class="fas fa-grip-vertical handle"></i>
+                        <span class="field-label">Email Address</span>
+                        <span class="field-type-badge">Email</span>
+                        <div class="action-buttons">
+                           <button class="btn-icon edit-btn"><i class="fas fa-edit"></i></button>
+                           <button class="btn-icon btn-danger delete-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </li>
+                    <li class="form-field-item" data-field-id="3">
+                        <i class="fas fa-grip-vertical handle"></i>
+                        <span class="field-label">Your Message</span>
+                        <span class="field-type-badge">Text Area</span>
+                        <div class="action-buttons">
+                            <button class="btn-icon edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon btn-danger delete-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <div id="field-editor-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3 id="modal-title">Add New Field</h3>
+            <form id="modal-field-form">
+                <input type="hidden" id="fieldId">
+                <div class="form-group">
+                    <label for="field-label">Field Label</label>
+                    <input type="text" id="field-label" name="label" required>
+                </div>
+                <div class="form-group">
+                    <label for="field-type">Field Type</label>
+                    <select id="field-type" name="type" required>
+                        <option value="text">Text Input</option>
+                        <option value="email">Email</option>
+                        <option value="tel">Phone Number</option>
+                        <option value="textarea">Text Area</option>
+                        <option value="select">Dropdown</option>
+                        <option value="date">Date</option>
+                    </select>
+                </div>
+                <div id="dropdown-options-container" class="form-group hidden">
+                    <label for="field-options">Dropdown Options (one per line)</label>
+                    <textarea id="field-options" name="options" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="field-required" name="required"> Is this field required?
+                    </label>
+                </div>
+                <button type="submit" class="btn">Save Field</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <script src="./js/forms.js"></script>
+</body>
+</html>

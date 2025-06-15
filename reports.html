@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-dashboard.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Admin <span>Panel</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./reports.html" class="active"><i class="fas fa-file-alt"></i> Reports</a></li>
+                    <li><a href="./logs.html"><i class="fas fa-clipboard-list"></i> Activity Logs</a></li>
+                    <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h2>Financial Reports</h2>
+            </div>
+
+            <div class="report-controls">
+                <div class="form-group">
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date" name="startDate">
+                </div>
+                <div class="form-group">
+                    <label for="end-date">End Date</label>
+                    <input type="date" id="end-date" name="endDate">
+                </div>
+                <button id="generate-report-btn" class="btn">Generate Report</button>
+            </div>
+
+            <div id="report-summary-cards" class="dashboard-cards-grid hidden">
+                <div class="dashboard-card">
+                    <i class="fas fa-dollar-sign card-icon"></i>
+                    <h3>Total Revenue</h3>
+                    <p class="card-value" id="report-total-revenue">৳0</p>
+                </div>
+                <div class="dashboard-card">
+                    <i class="fas fa-chart-line card-icon"></i>
+                    <h3>Total Expenses</h3>
+                    <p class="card-value" id="report-total-expenses">৳0</p>
+                </div>
+                <div class="dashboard-card">
+                    <i class="fas fa-wallet card-icon"></i>
+                    <h3>Net Profit</h3>
+                    <p class="card-value" id="report-net-profit">৳0</p>
+                </div>
+            </div>
+
+            <div id="report-details-area" class="hidden">
+                 <div class="widget-card">
+                     <h3>Profit & Loss Details</h3>
+                     <div class="dashboard-charts-grid">
+                        <div class="chart-card">
+                           <h3>Revenue vs Expenses</h3>
+                           <canvas id="pnlChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                           <h3>Expense Breakdown</h3>
+                           <canvas id="expensePieChart"></canvas>
+                        </div>
+                     </div>
+                 </div>
+                 <div class="widget-card">
+                     <h3>Expense Breakdown Table</h3>
+                     <div class="table-container">
+                         <table class="data-table">
+                             <thead>
+                                 <tr>
+                                     <th>Category</th>
+                                     <th>Total Amount (৳)</th>
+                                 </tr>
+                             </thead>
+                             <tbody id="expense-breakdown-table">
+                                 </tbody>
+                         </table>
+                     </div>
+                 </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/reports.js"></script>
+</body>
+</html>

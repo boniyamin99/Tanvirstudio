@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Service Business Management System</title>
+    
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1C1C1C"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="container">
+            <a href="#home" class="logo">Tanvir <span>Studio</span></a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="./admin.html" class="admin-login-link">Admin Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-parallax" id="home">
+        <div class="parallax-bg"></div>
+        <div class="hero-content parallax-content">
+            <h1>Create Your Sound</h1>
+            <p>Unleash your creativity with our state-of-the-art recording studio!</p>
+            <a href="#booking" class="btn hero-btn">Choose a Package</a>
+        </div>
+    </section>
+
+    <section id="services" class="container">
+        <h2>Our Services</h2>
+        <p class="section-description">
+            We offer a comprehensive range of professional music services to bring your artistic vision to life.
+        </p>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-microphone-alt"></i>
+                <h3>Recording</h3>
+                <p>High-fidelity audio recording with state-of-the-art equipment.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-sliders-h"></i>
+                <h3>Mixing</h3>
+                <p>Perfect your tracks with professional mixing.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-waveform"></i>
+                <h3>Mastering</h3>
+                <p>Polish your music for release-ready sound.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-headphones-alt"></i>
+                <h3>Music Production</h3>
+                <p>From songwriting to full arrangement, we guide you through the entire production process.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-guitar"></i>
+                <h3>Instrumentals</h3>
+                <p>Custom instrumental creation across various genres to fit your needs.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Vocal Training</h3>
+                <p>Professional vocal coaching to enhance your singing techniques and performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="container">
+        <h2>Choose Your Package</h2>
+        <p class="section-description">
+            Select the perfect package for your musical journey, designed to meet diverse needs and budgets.
+        </p>
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="package-icon"><i class="fas fa-star"></i></div>
+                <h3>Basic Package</h3>
+                <p class="package-price">৳3,000</p>
+                <ul class="package-features">
+                    <li>2 hours recording</li>
+                    <li>Basic Mixing</li>
+                    <li>1 Revision</li>
+                </ul>
+                <a href="#booking" class="btn package-btn">Order Now</a>
+            </div>
+            <div class="package-card">
+                <div class="package-icon"><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3>Standard Package</h3>
+                <p class="package-price">৳7,000</p>
+                <ul class="package-features">
+                    <li>5 hours recording</li>
+                    <li>Professional Mixing</li>
+                    <li>2 Revisions</li>
+                    <li>Basic Mastering</li>
+                </ul>
+                <a href="#booking" class="btn package-btn">Order Now</a>
+            </div>
+            <div class="package-card">
+                <div class="package-icon"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3>Premium Package</h3>
+                <p class="package-price">৳15,000</p>
+                <ul class="package-features">
+                    <li>10 hours recording</li>
+                    <li>Advanced Mixing</li>
+                    <li>Unlimited Revisions</li>
+                    <li>Professional Mastering</li>
+                    <li>Custom Instrumentals</li>
+                </ul>
+                <a href="#booking" class="btn package-btn">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2>Our Latest Projects</h2>
+        <p class="section-description">
+            Explore some of the incredible projects we've had the privilege to work on.
+        </p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-title="Epic Orchestral Piece" data-description="A cinematic orchestral track recorded and mixed for a film score." data-image="https://via.placeholder.com/600x400/0A1128/FFFFFF?text=Project+1+Image" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+                <img src="https://via.placeholder.com/600x400/0A1128/FFFFFF?text=Project+1+Image" alt="Project 1">
+                <div class="portfolio-item-overlay"><i class="fas fa-play"></i></div>
+                <div class="portfolio-details">
+                    <h3>Epic Orchestral Piece</h3>
+                    <p>Recording & Mixing</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-title="Pop Vocal Track" data-description="Crisp and clear vocals mixed with a modern pop instrumental." data-image="https://via.placeholder.com/600x400/0A1128/FFFFFF?text=Project+2+Image" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+                <img src="https://via.placeholder.com/600x400/0A1128/FFFFFF?text=Project+2+Image" alt="Project 2">
+                <div class="portfolio-item-overlay"><i class="fas fa-play"></i></div>
+                <div class="portfolio-details">
+                    <h3>Pop Vocal Track</h3>
+                    <p>Mixing & Mastering</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-title="Indie Rock Album" data-description="Full album production, from tracking to mastering for an indie band." data-image="https://via.placeholder.com/600x400/0A1128/FFFFFF?text=Project+3+Image" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">
+                <img src="https://via.placeholder.com/600x400/0A1128/FFFFFF?text=Project+3+Image" alt="Project 3">
+                <div class="portfolio-item-overlay"><i class="fas fa-play"></i></div>
+                <div class="portfolio-details">
+                    <h3>Indie Rock Album</h3>
+                    <p>Full Production</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-title="Acoustic Folk Song" data-description="Raw and authentic acoustic recording with delicate vocal layering." data-image="https://via.placeholder.com/600x400/0A1128/FFFFFF?text=Project+4+Image" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3">
+                <img src="https://via.placeholder.com/600x400/0A1128/FFFFFF?text=Project+4+Image" alt="Project 4">
+                <div class="portfolio-item-overlay"><i class="fas fa-play"></i></div>
+                <div class="portfolio-details">
+                    <h3>Acoustic Folk Song</h3>
+                    <p>Recording & Mixing</p>
+                </div>
+            </div>
+        </div>
+        <div class="lightbox-overlay">
+            <span class="lightbox-close">×</span>
+            <div class="lightbox-content">
+                <img id="lightbox-image" src="" alt="Project Image">
+                <audio id="lightbox-audio" controls></audio>
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Our Studio</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://via.placeholder.com/600x400/0A1128/FFFFFF?text=Studio+Interior" alt="Studio Interior">
+            </div>
+            <div class="about-text">
+                <h3>Our Passion, Your Sound</h3>
+                <p>
+                    Established in 20XX, our professional music studio is dedicated to providing artists with a creative and inspiring environment. We combine cutting-edge technology with experienced engineers and producers to deliver exceptional audio quality for every project.
+                </p>
+                <p>
+                    From emerging talents to established artists, we are committed to helping you achieve your musical aspirations. Our team believes in collaboration, precision, and passion in every note.
+                </p>
+                <p>
+                    We offer a comfortable and acoustically treated space designed for optimal recording, mixing, and mastering. Come and experience the difference.
+                </p>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="booking-form-section">
+        <div class="booking-form-container">
+            <h2>Book Your Studio Time</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="package">Select Package</label>
+                    <select id="package" name="package" required>
+                        <option value="">-- Choose a package --</option>
+                        <option value="basic" data-price="3000">Basic Package (৳3,000)</option>
+                        <option value="standard" data-price="7000">Standard Package (৳7,000)</option>
+                        <option value="premium" data-price="15000">Premium Package (৳15,000)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message / Project Details</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                
+                <div class="form-group payment-options">
+                    <label>Payment Option</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="paymentOption" value="40_percent" checked> Pay 40% Advance</label>
+                        <label><input type="radio" name="paymentOption" value="50_percent"> Pay 50% Advance</label>
+                        <label><input type="radio" name="paymentOption" value="full_payment"> Pay Full Amount</label>
+                    </div>
+                </div>
+                <div id="payment-summary" class="form-group payment-summary">
+                    <p>Amount to Pay Now: <strong id="payable-amount">৳0</strong></p>
+                </div>
+
+                <button type="submit" class="btn">Confirm Booking & Pay</button>
+            </form>
+            <div id="booking-message" style="margin-top: 20px;"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Get in Touch</h2>
+        <p class="section-description">
+            We'd love to hear from you. Reach out to us for bookings, inquiries, or any questions you might have.
+        </p>
+        <div class="contact-info-grid">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>123 Music Lane, Studio City, Melodyville, 45678</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Phone</h3>
+                <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p><a href="mailto:info@musicstudio.com">info@musicstudio.com</a></p>
+            </div>
+        </div>
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10000!2d-74.0060!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQ5Jd42Ii4iTiA3NMKwMTQnMzAuMiJX!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Professional Music Studio. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chat-widget-container">
+        <div id="chat-bubble"><i class="fas fa-comments"></i></div>
+        <div id="chat-window" class="hidden">
+            <div id="chat-header"><h3>Live Chat</h3><button id="close-chat-btn">&times;</button></div>
+            <div id="chat-messages"><div class="message received">Welcome! How can we help?</div></div>
+            <div id="chat-input-area"><input type="text" id="chat-input" placeholder="Type..."><button id="send-chat-btn"><i class="fas fa-paper-plane"></i></button></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
